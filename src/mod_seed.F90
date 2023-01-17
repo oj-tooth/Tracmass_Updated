@@ -272,7 +272,9 @@ MODULE mod_seed
             IF (nqua == 1) THEN
                 ntracmax = nsdMax*nsdTim*INT(partQuant)
             ELSE
-                ntracmax = nsdMax*nsdTim*10000
+                ! Modification of trajectory array allocation [22/11/2021].
+                ! Reverts to previous version of Tramcass (v7.0).
+                ntracmax = nsdMax*nsdTim*100
             END IF
 
             ALLOCATE ( trajectories(ntracmax) )
